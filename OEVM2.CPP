@@ -26,8 +26,8 @@ int main() {
 			textcolor(j);
 			gotoxy(1, middle);
 			cprintf("Background: %s, font: %s\r\n", colorName[i], colorName[j]);
-			// delay(T);
-			delay(20);
+			delay(T);
+			// delay(20);
 		}
 	}
 	getch();
