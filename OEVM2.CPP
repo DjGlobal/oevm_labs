@@ -74,7 +74,7 @@ int main() {
 			
 
 			cprintf("Background: %s, font: %s\r\n", colorName[i], colorName[j]);
-			delay(100);
+			delay(T);
 		}
 	}
 	getch();
