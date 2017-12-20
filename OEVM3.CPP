@@ -22,10 +22,6 @@ int main()
 		return 255;
 	}
 
-	// printf("max mode: %s\n", getmodename(getmaxmode()));
-	// printf("cur mode: %s\n", getmodename(getgraphmode()));
-	// printf("max x: %d, max y: %d\n", getmaxx(), getmaxy());
-
 	int screen_center_x, screen_center_y;
 	screen_center_x = (getmaxx() + 1) / 2;
 	screen_center_y = (getmaxy() + 1) / 2;

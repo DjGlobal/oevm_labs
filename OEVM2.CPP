@@ -71,8 +71,6 @@ int main() {
 			}
 			
 			cprintf("\n\r");
-			
-
 			cprintf("Background: %s, font: %s\r\n", colorName[i], colorName[j]);
 			delay(T);
 		}
