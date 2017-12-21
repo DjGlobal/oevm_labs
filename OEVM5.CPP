@@ -10,11 +10,11 @@ void interrupt far mykeyboardint(...)
 }
 
 int main() {
-	oldvect = _dos_getvect (0x09);
-	_dos_setvect (0x09, mykeyboardint);
+	oldvect = getvect (0x09);
+	setvect (0x09, mykeyboardint);
 	printf("Vect set\n\r");
 	getch();
 	getch();
-	_dos_setvect (0x09, oldvect);
+	setvect (0x09, oldvect);
 	return 0;
 }
