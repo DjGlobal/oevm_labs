@@ -67,6 +67,8 @@ int main()
 	}
 
 	char str[12];
+	settextjustify(CENTER_TEXT, CENTER_TEXT);
+
 	for (int i = 0; i*pixelspery < (graphic_zero_y - graphic_end_y); ++i)
 	{
 		line(graphic_zero_x, graphic_zero_y-i*pixelspery, graphic_zero_x-2, graphic_zero_y-i*pixelspery);
@@ -78,18 +80,24 @@ int main()
 		if (j % 2) {
 			line(graphic_zero_x+j*pixelsperx, graphic_zero_y, graphic_zero_x+j*pixelsperx, graphic_zero_y+2);
 			sprintf(str, "%dpi", (3+j)/2);
-			outtextxy(graphic_zero_x-10+j*pixelsperx, graphic_zero_y+5, str);
+			outtextxy(graphic_zero_x+j*pixelsperx, graphic_zero_y+6, str);
+			// outtextxy(graphic_zero_x-10+j*pixelsperx, graphic_zero_y+5, str);
 		}
 		else {
 			line(graphic_zero_x+j*pixelsperx, graphic_zero_y, graphic_zero_x+j*pixelsperx, graphic_zero_y+12);
 			sprintf(str, "%dpi", 3+j);
-			outtextxy(graphic_zero_x-12+j*pixelsperx, graphic_zero_y+15, str);
-			outtextxy(graphic_zero_x-10+j*pixelsperx, graphic_zero_y+23, "/2");
+			outtextxy(graphic_zero_x+j*pixelsperx, graphic_zero_y+16, str);
+			// outtextxy(graphic_zero_x-12+j*pixelsperx, graphic_zero_y+15, str);
+			outtextxy(graphic_zero_x+j*pixelsperx, graphic_zero_y+24, "/2");
+			// outtextxy(graphic_zero_x-10+j*pixelsperx, graphic_zero_y+23, "/2");
 		}		
 	}
 	sprintf(str, "y = %.5f", maxy);
+	
 	int maxx_ = int((maxx-3*M_PI_2)/M_PI_2*pixelsperx), maxy_ = int(maxy*pixelspery);
 	circle(graphic_zero_x+maxx_,graphic_zero_y-maxy_,1);
+
+	settextjustify(LEFT_TEXT, CENTER_TEXT);
 	outtextxy(graphic_zero_x+maxx_,graphic_zero_y-maxy_-15,str);
 
 	getch();
