@@ -67,14 +67,15 @@ int main()
 	}
 
 	char str[12];
-	settextjustify(CENTER_TEXT, CENTER_TEXT);
 
+	settextjustify(RIGHT_TEXT, CENTER_TEXT);
 	for (int i = 0; i*pixelspery < (graphic_zero_y - graphic_end_y); ++i)
 	{
 		line(graphic_zero_x, graphic_zero_y-i*pixelspery, graphic_zero_x-2, graphic_zero_y-i*pixelspery);
 		sprintf(str, "%d", i);
 		outtextxy(graphic_zero_x-10, graphic_zero_y-2-i*pixelspery, str);
 	}
+	settextjustify(CENTER_TEXT, CENTER_TEXT);
 	for (int j = 0; j*pixelsperx < (graphic_end_x - graphic_zero_x); ++j)
 	{
 		if (j % 2) {
