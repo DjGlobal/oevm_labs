@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <stdio.h>
 
-int mygetch() {
+char mygetch() {
 	union REGS r;
 	r.h.ah = 7; 
 	int86(0x21, &r, &r);
@@ -14,7 +14,7 @@ int main() {
 	int X1=15, Y1=5, X2=65, Y2=15;
 	clrscr();
 
-	printf("TYPE 1 TO USE STANDART FUNCTIONS, 2 TO USE MY SHT\n");
+	printf("Type 1 to use function getch() from stdio.h, 2 to use my mygetch()\n");
 	char mode;
 	do {
 		mode = getch();
@@ -44,6 +44,8 @@ int main() {
 					continue;
 			}
 			int dx = (c==LEFT)?(-1):1;
+			// копируем вправо или влево кусок экрана из трёх текселей — пустого, со звёдочкой и пустого,
+			// чтобы пустыми перекрывать старую звёздочку, где бы она ни была
 			movetext(x-1,y,x+1,y,x-1+dx,y);
 			x += dx;
 		}
